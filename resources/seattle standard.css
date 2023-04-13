@@ -13,14 +13,17 @@ h1 {
 }
 body button {
     all: unset;
+    cursor: pointer;
 }
 html {
     width: auto;
     margin: 0;
+    overflow-x: hidden;
 }
 body {
     margin: 0;
     width: auto;
+    overflow-x: hidden;
 }
 
 h1 a {
@@ -168,6 +171,7 @@ main {
     display: grid;
     width: 100%;
     grid-template: repeat(5, 500px) / 100%;
+    
 }
 main h2 {
     color: black;
@@ -220,6 +224,9 @@ main li {
 .Membership ul {
     padding: 0%;
 }
+.Membership a {
+    display: flex;
+}
 /* line seperateors for th different sections */
 
 .but-2 {
@@ -238,6 +245,35 @@ main li {
     display: block;
     width: 400px;
 }
+/* this is the plus and minus sign next to the memebership options */
+.toggle-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .toggle-btn i {
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .toggle-btn.minus i {
+    transform: rotate();
+  }
+  
+  .toggle-btn i:before {
+    content: "\f067"; /* Plus icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    font-size: 24px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .toggle-btn.minus i:before {
+    content: "\f068"; /* Minus icon */
+  }
+
+  
 
 @media only screen and (min-width= 834px) {
     #hamburger {
@@ -253,6 +289,9 @@ main li {
 /* Phones! and Tablets!*/
 
 @media only screen and (max-width: 834px) {
+    header {
+        position: relative;
+    }
 
     body {
         overflow-x: hidden;
@@ -275,6 +314,10 @@ main li {
         border-radius: 10px;
         transition: 0.3s all;
     }
+    nav {
+    z-index: 10;
+
+    }
     nav ul {
         flex-direction: column;
         position: absolute;
@@ -286,6 +329,7 @@ main li {
         width: 100%;
         align-items: center;
         transition: right 0.3s ease-in;
+        z-index: 5;
     }
     nav h1 {
         font-size: 1.5rem;
